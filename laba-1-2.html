@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Упражнение 2</title>
+  </head>
+  <body>
+    <h1>Использование операторов языка.</h1>  
+    
+      <script type="text/javascript">
+        document.write("<table border=1>");
+		for (var tr=1; tr<=10; tr++)
+		{
+			document.write("<tr>");
+			for(var td=1; td<=10; td++)
+			{
+				document.write("<td>"); 
+				document.write(td*tr);
+				document.write("</td>");
+			}
+			document.write("</tr>");
+		}
+		document.write("</table>");
+     </script>
+  </body>
+</html>
