@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Упражнение 3</title>
+</head>
+
+<body>
+    <h1>Использование функций.</h1>
+    <input type="number" id="n">
+    <button onclick="getDay()">Получить выражение</button>
+    <div id="result"></div>
+    <script type="text/javascript">
+
+        function getDay(n) {
+
+            let result = document.getElementById("result");
+            let day = document.getElementById("n").value;
+
+            if (day == 1) {
+                result.innerHTML = "До конца вашей учебы остается 1 день.";
+            } else if (day > 1 && day < 5) {
+                result.innerHTML = `До конца вашей учебы остаётся ${day} дня.`;
+            } else {
+                result.innerHTML = `До конца вашей учёбы остаётся ${day} дней.`;
+            }
+        }
+    </script>
+</body>
+
+</html>
