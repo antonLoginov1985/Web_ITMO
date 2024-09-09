@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Упражнение 4</title>
+</head>
+
+<body>
+    <h1>Создание и использование объектов</h1>
+    <button onclick="newClass.show()">Показать класс</button>
+    <script type="text/javascript">
+        class NewClass {
+            constructor(title, url) {
+                this.title = title;
+                this.url = url;
+            }
+           
+            show() {
+                document.write(`<h2>${this.title}</h2>`);
+                document.write(`<a href="${this.url}">Перейти</a>`);
+            }
+        }
+        let newClass = new NewClass('Кинопоиск', 'https://www.kinopoisk.ru/');
+    </script>
+</body>
+
+</html>
