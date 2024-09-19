@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Форма</title>
+    <style>
+        input:valid+span:after {
+            content: url(yes.jpeg);
+        }
+
+        input:invalid+span:after {
+            content: url(no.jpeg);
+        }
+    </style>
+</head>
+
+<body>
+    <form action='html5.php'>
+        <p>Пожалуйста, заполните обязательные поля.</p>
+        <p>Имя:<input type="text" required /><span></span></p>
+        <p>Возраст:<input type="number" size="3" min="1" max="100" /><span></span></p>
+        <p>E-mail:<input type="email" required /><span></span></p>
+        <p>Сайт<input type="url" /><span></span></p>
+
+        <button type="submit">Отправить</button>
+    </form>
+</body>
+
+</html>
