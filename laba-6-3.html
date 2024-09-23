@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <title>Определение местоположения</title>
+</head>
+
+<body>
+   <div id="location"></div>
+   <script>
+
+      const locationID = document.getElementById('location');
+
+      function getLocation() {
+         if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showgGeolocation, showError);
+         } else {
+            locationID.innerHTML = 'Браузер не поддерживает Geolocation API';
+         }
+      }
+
+      function showgGeolocation(position) {
+         const latitude = position.coords.latitude;
+         const longitude = position.coords.longitude;
+
+         locationID.innerHTML = `Широта: ${latitude}<br>Долгота: ${longitude}`;
+      }
+
+      function showError(error) {
+         switch (error.code) {
+            case error.PERMISSION_DENIED:
+               locationID.innerHTML = 'Пользователь запретил доступ к местоположению';
+               break;
+            case error.POSITION_UNAVAILABLE:
+               locationID.innerHTML = 'Местоположение не обнаружено';
+               break;
+            case error.TIMEOUT:
+               locationID.innerHTML = 'Истекло время ожидания определения местоположения';
+               break;
+            default:
+               locationID.innerHTML = 'Произошла неизвестная ошибка';
+         }
+      }
+
+      getLocation();
+
+   </script>
+</body>
+
+</html>
