@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+    <style>
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+         
+        }
+
+        main {
+            margin: 50px auto;
+            max-width: 800px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+         
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: center;
+        
+        }
+
+        label {
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: .2em;
+            margin-right: 10px;
+        }
+
+        
+
+        button {
+            cursor: pointer;
+            background: linear-gradient(to bottom, #f7941d, #e65100);
+           
+            width: 100%;
+            height: 60px;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            line-height: 56px;
+            border-radius: 6px;
+            transition: background.3
+        }
+    </style>
+    
+</head>
+
+<body>
+    <header>
+        <h1>Автоматизированное рабочее место менеджера по охране труда </h1>
+    </header>
+
+    <main>
+
+        <section>
+            <p>Тестируемый работник.</p>
+
+            <form action="/add-worker" method="post">
+                <label><h1 id="name" >имя не заполнено</h1></label><br>
+                <label><h1 id="surname">фамилия не заполнена</h1></label><br>
+             
+
+                <button type="button" onclick="window.location.href='employee.html'">Добавить информацию о
+                    работнике</button>
+                <button type="button" onclick="window.location.href='test.html'">Начать тест</button>
+                <button type="button" onclick="window.location.href='information.html'">Информация для обучения</button>
+                <button type="button" onclick="window.location.href='training.html'">заявка на обучение</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p dir="ltr"><span>Посмотреть, как проводить инструктаж, можно в&nbsp;приложении к</span><a
+                href="https://docs.cntd.ru/document/727122310" target="_blank"
+                rel="nofollow">&nbsp;ПриказуМЧС</a>&nbsp;от&nbsp;18&nbsp;ноября 2021 года N 806</p>
+        ITMO © 2024
+    </footer>
+
+    <script>
+        let surname = localStorage.getItem('surname');
+        let surnameID = document.getElementById('surname')
+        let name = localStorage.getItem('name');
+        let nameID = document.getElementById('name')
+        window.onload = function () {
+            if (surname== null) {
+                surnameID.innerHTML;
+            }
+            else {
+                surnameID.innerHTML = surname;
+            }
+        
+            if (name== null) {
+                nameID.innerHTML;
+            }
+            else {
+                nameID.innerHTML = name;
+            }
+        }
+
+     
+    </script>
+</body>
+
+</html>

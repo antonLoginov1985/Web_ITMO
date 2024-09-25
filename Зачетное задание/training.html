@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Страница ввода информации о прохождении обучения или аттестации</title>
+    <style>
+        form {
+            width: 400px;
+            margin: 0 auto;
+            /* выравнивает форму по центру */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            /* отступ между меткой и полем ввода */
+        }
+
+        button {
+            background-color: #4CAF50;
+            /* зелёный цвет */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            border-bottom: 2px solid #ccc;
+            /* подчёркивание */
+        }
+
+        select {
+            height: 30px;
+            line-height: 30px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Форма для ввода данных -->
+    <form action="/action_page.php" method="post">
+        <label for="name">ФИО:</label>
+        <input type="text" id="name" name="name"><br><br>
+
+        <!-- Место обучения -->
+        <label for="place_of_study">Место обучения:</label>
+        <select id="place_of_study" name="place_of_study">
+            <option value="Сторонняя образовательная организация">Сторонняя образовательная организация</option>
+            <option value="Корпоративная образовательная организация">Корпоративная образовательная организация</option>
+        </select><br><br>
+
+        <!-- Блок обучения -->
+        <label for="block_of_training">Блок обучения:</label>
+        <select id="block_of_training" name="block_of_training">
+            <option value="Охрана труда">Охрана труда</option>
+            <option value="Пожарная безопасность">Пожарная безопасность</option>
+            <option value="Промышленная безопасность">Промышленная безопасность</option>
+        </select><br><br>
+
+        <!-- Вид обучения -->
+        <label for="type_of_training">Вид обучения:</label>
+        <select id="type_of_training" name="type_of_training">
+            <option value="Плановое">Плановое</option>
+            <option value="Внеплановое">Внеплановое</option>
+            <option value="Переподготовка">Переподготовка</option>
+        </select>
+
+        <!-- Кнопка отправки формы -->
+        <button type="submit">Отправить</button>
+    </form>
+</body>
+
+</html>

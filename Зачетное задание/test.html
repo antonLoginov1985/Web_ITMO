@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест по охране труда</title>
+    <style>
+       
+
+        .correct {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form">
+        <h1>Тест по пожарной безопасности</h1>
+        <div id="question1">
+            <h2>Вопрос 1: Дайте определение понятию «пожар»</h2><br>
+            <label><input type="radio" name="q1" value="a" class="correct">Обусловленная воздействием человека огненная
+                стихия,
+                ограниченно
+                поддающаяся контролю<br></label>
+            <label><input type="radio" name="q1" value="b">Развивающийся стихийно и неконтролируемый процесс горения,
+                который
+                приводит к уничтожению материальных ценностей и представляет опасность для жизни людей<br></label>
+            <label><input type="radio" name="q1" value="c">Полностью контролируемый процесс горения<br></label>
+        </div>
+        <div id="question2">
+            <h2>Вопрос 2: Задачами пожарной профилактики являются</h2><br>
+            <input type="radio" name="q2" value="a" class="correct">Создание превентивных мер, которые направлены на
+            исключение
+            возможности возникновения пожаров и минимизацию их последствий<br>
+            <input type="radio" name="q2" value="b">Организация мер по минимизации разрушительного воздействия огня на
+            людей и материальные ценности<br>
+            <input type="radio" name="q2" value="c">Ограничение распространения огня<br>
+        </div>
+        <div id="question3">
+            <h2>Вопрос 3: Какой вид противопожарного инструктажа проходят работники при устройстве на работу?</h2>
+            <br>
+            <input type="radio" name="q3" value="a">Целевой<br>
+            <input type="radio" name="q3" value="b">Плановый<br>
+            <input type="radio" name="q3" value="c" class="correct">Первичный<br>
+
+        </div>
+        <button type="submit">Отправить ответы</button>
+        <button type="button" onclick="checkAnswers()">Submit</button>
+        <p id="result"></p>
+    </form>
+
+    <script>
+        function checkAnswers() {
+            let correctAnswers = 0;
+            if (document.getElementById('form').elements['q1'].value === 'a') {
+
+                document.querySelector('input[type=radio]:checked').nextElementSibling.style.backgroundColor = 'green';
+                correctAnswers++;
+            }
+
+            if (document.getElementById('form').elements['q2'].value === 'a') {
+                document.querySelector('input[type=radio]:checked').nextElementSibling.style.backgroundColor = 'green';
+                correctAnswers++;
+            }
+
+            if (document.getElementById('form').elements['q3'].value === 'c') {
+                document.querySelector('input[type=radio]:checked').nextElementSibling.style.backgroundColor = 'green';
+                correctAnswers++;
+            }
+
+            document.getElementById('result').innerHTML = `У Вас ${correctAnswers} правильных ответ из 3`;
+        }   
+    </script>
+</body>
+
+</html>
